@@ -1,6 +1,4 @@
-bool compare(bool x);
-bool compare(int x);
-
+#include "Functions.h"
 int main()
 {
 	compare(true);

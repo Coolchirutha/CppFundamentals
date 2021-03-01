@@ -16,4 +16,5 @@ bool compare(int x) {
 		cout << "number is less than 3" << endl;
 		return false;
 	}
+	
 }
