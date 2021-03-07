@@ -74,3 +74,26 @@ void vectortest() {
 	int countInt = count(begin(test), end(test), 6);
 	cout << countInt << endl;
 }
+
+// Find all permutations of a given string
+void perm(string s, int k) {
+	static int key[sizeof(s) / sizeof(s[0])];
+	static char result[sizeof(s) / sizeof(s[0])];
+	static int count = 0;
+	int i;
+	if (s[k] == '\0') {
+		result[k] = '\0';
+		std::cout << result << std::endl;
+	}
+	else {
+		for (i = 0; s[i] != '\0'; i++) {
+			if (key[i] == 0) {
+				result[k] = s[i];
+				count++;
+				key[i] = 1;
+				perm(s, k + 1);
+				key[i] = 0;
+			}
+		}
+	}
+}
